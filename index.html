@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THRnya Om, Tante, Kak, Mas, Mbak, Bude, Pakde</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:340px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
+    padding:30px 25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.decor{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.title{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.subtitle{
+    font-size:14px;
+    opacity:0.9;
+    margin:8px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border:none;
+    border-radius:25px;
+    background:#ffd369;
+    color:#333;
+    cursor:pointer;
+    transition:0.25s;
+    margin-top:10px;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+.langBtn{
+    background:#ffffff22;
+    color:white;
+}
+
+#qr, #tutorial{
+    display:none;
+    margin-top:20px;
+}
+
+#qr img{
+    width:100%;
+    max-width:200px;
+    background:#2b2e33;
+    padding:10px;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="decor">🌙✨🕌</div>
+
+<div class="title" id="title">Happy Eid Mubarak</div>
+
+<div class="subtitle" id="text1">May your fasting and prayers be accepted</div>
+<div class="subtitle" id="text2">Scan the QR to bless me with 💵</div>
+
+<button id="qrBtn" onclick="showQR()">Show QR Code</button>
+<button id="tutorialBtn" onclick="toggleTutorial()">Tutorial</button>
+
+<button class="langBtn" onclick="toggleLanguage()">🌐 Bahasa / English</button>
+
+<div id="tutorial">
+
+<div class="decor">📱💸</div>
+
+<div class="subtitle" id="t1">1. Open your banking app or e-wallet</div>
+<div class="subtitle" id="t2">2. Choose "Scan QR"</div>
+<div class="subtitle" id="t3">3. Scan the QR code</div>
+<div class="subtitle" id="t4">4. Enter the THR amount</div>
+<div class="subtitle" id="t5">5. Confirm and send blessings 🙏</div>
+
+</div>
+
+<div id="qr">
+<br>
+<img src="qr.png" alt="QR Code">
+</div>
+
+</div>
+
+<script>
+
+let lang = "en"
+
+function showQR(){
+    document.getElementById("qr").style.display="block"
+    document.getElementById("qrBtn").style.display="none"
+}
+
+function toggleTutorial(){
+    let t = document.getElementById("tutorial")
+    t.style.display = t.style.display === "block" ? "none" : "block"
+}
+
+function toggleLanguage(){
+
+if(lang === "en"){
+
+document.getElementById("title").innerText="Selamat Hari Raya Idul Fitri"
+document.getElementById("text1").innerText="Semoga puasa dan ibadahmu diterima"
+document.getElementById("text2").innerText="Scan QR untuk memberi THR 💵"
+
+document.getElementById("t1").innerText="1. Buka aplikasi bank atau e-wallet"
+document.getElementById("t2").innerText="2. Pilih 'Scan QR'"
+document.getElementById("t3").innerText="3. Scan QR di halaman ini"
+document.getElementById("t4").innerText="4. Masukkan jumlah THR"
+document.getElementById("t5").innerText="5. Konfirmasi dan kirim berkah 🙏"
+
+document.getElementById("qrBtn").innerText="Tampilkan QR"
+document.getElementById("tutorialBtn").innerText="Tutorial"
+
+lang="id"
+
+}else{
+
+document.getElementById("title").innerText="Happy Eid Mubarak"
+document.getElementById("text1").innerText="May your fasting and prayers be accepted"
+document.getElementById("text2").innerText="Scan the QR to bless me with 💵"
+
+document.getElementById("t1").innerText="1. Open your banking app or e-wallet"
+document.getElementById("t2").innerText='2. Choose "Scan QR"'
+document.getElementById("t3").innerText="3. Scan the QR code"
+document.getElementById("t4").innerText="4. Enter the THR amount"
+document.getElementById("t5").innerText="5. Confirm and send blessings 🙏"
+
+document.getElementById("qrBtn").innerText="Show QR Code"
+document.getElementById("tutorialBtn").innerText="Tutorial"
+
+lang="en"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
